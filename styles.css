@@ -1628,6 +1628,10 @@ body {
     position: fixed;
     inset: 0;
     z-index: -1;
+    top: -20px;
+    bottom: -20px;
+    left: -20px;
+    right: -20px;
 
     background-image: url('images/5.jpg');
     background-size: 115% auto;
