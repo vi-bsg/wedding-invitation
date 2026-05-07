@@ -1,0 +1,1643 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+
+    /* ДЕСКТОПНЫЙ ФОН */
+    background-image: url('images/8.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap&subset=cyrillic');
+
+/* Убираем серое затемнение */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Добавляем лёгкое свечение сверху (как блик на дорогой бумаге) */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 250, 240, 0.35), transparent 70%);
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.35);
+}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap&subset=cyrillic');
+.hero-names {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.names-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 320px;
+    margin: 0 auto;
+}
+.name {
+    font-family: 'Caveat', 'Cormorant Garamond', cursive !important;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #2d2b29;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 1px;
+}
+.name-top {
+    top: 8%;
+    animation: slideDownFade 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* АМПЕРСАНТ — ПО ЦЕНТРУ */
+.amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6.5rem;
+    font-weight: 400;
+    color: rgba(201, 162, 124, 0.35);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeScale 0.8s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* ВИКТОРИЯ — ВНИЗУ */
+.name-bottom {
+    bottom: 8%;
+    top: auto;
+    animation: slideUpFade 0.8s ease forwards;
+    animation-delay: 1s;
+}
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+body,
+p,
+span,
+div,
+input,
+select,
+button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, .address {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a3b32;
+}
+
+/* карточка */
+.card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    padding: 55px 28px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 10%, rgba(255,255,255,0.35), transparent 55%),
+                radial-gradient(circle at 80% 90%, rgba(201,162,124,0.10), transparent 60%);
+    pointer-events: none;
+}
+
+.card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* шрифты */
+h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* header */
+.header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.header h1 {
+    font-size: 3rem;
+}
+
+.header span {
+    color: #c9a27c;
+}
+
+.suptitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b69b82;
+    margin-bottom: 18px;
+    opacity: 0.9;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9a7f6e;
+    margin-top: 10px;
+}
+
+.header::before,
+.header::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+    margin: 18px auto;
+}
+
+/* дата */
+.date {
+    text-align: center;
+    padding: 30px;
+    margin-top: 0;
+}
+
+.date h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #754e34;
+}
+
+/* ЛОКАЦИИ */
+.locations {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.box {
+    background: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    padding: 30px;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.emoji {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.box p {
+    line-height: 1.7;
+}
+
+.note {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #b68b68;
+    background: #fff3ec;
+    padding: 10px 14px;
+    border-radius: 50px;
+}
+
+/* таймер */
+.timer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.timer h4 {
+    color: #c2a084;
+    margin-bottom: 20px;
+}
+
+.timer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 16px 20px;
+    min-width: 85px;
+}
+
+.time-box span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #b2825d;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.time-box p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #be9a7a;
+}
+
+/* дресс-код */
+.dress {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 70px;
+}
+
+.dress h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+}
+
+.dress-intro {
+    color: #7a6356;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.editorial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110px;
+    text-align: center;
+}
+
+.circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.10), inset 0 3px 8px rgba(255,255,255,0.6);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.swatch:hover .circle {
+    transform: scale(1.08);
+}
+
+.label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: #3b2f29;
+    margin-bottom: 3px;
+}
+
+.desc {
+    font-size: 0.75rem;
+    color: #9a7f6e;
+    opacity: 0.8;
+}
+
+.dress-note {
+    margin-top: 30px;
+    font-size: 0.92rem;
+    color: #6f5a4d;
+    line-height: 1.6;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* RSVP форма */
+.rsvp {
+    margin-top: 70px;
+    text-align: center;
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(18px);
+    border-radius: 28px;
+    padding: 40px 28px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.rsvp h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #3b2f29;
+}
+
+.rsvp-sub {
+    color: #8a6f5c;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+
+.rsvp-form {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus {
+    border-color: #c6a07e;
+    background: rgba(255,255,255,0.9);
+}
+
+.rsvp-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%238a6f5c' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+
+.rsvp-form button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, #c6a07e, #b68b68);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+.rsvp-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(182,139,104,0.25);
+}
+
+.feedback {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    min-height: 40px;
+}
+
+/* Программа дня (таймлайн) */
+.timeline {
+    margin: 60px 0;
+    padding: 0 10px;
+}
+
+.timeline-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #3b2f29;
+    margin-bottom: 30px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    animation: fadeUp 0.5s ease;
+}
+
+.time {
+    min-width: 80px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #b68b68;
+    font-weight: 600;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #5a463c;
+    line-height: 1.5;
+}
+
+.text span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #8a6f5c;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero-names {
+    min-height: 400px !important;
+    margin: 10px 0 10px 0 !important;
+}
+
+.names-wrapper {
+    height: 340px !important;
+    max-width: 600px !important;
+}
+
+.header {
+    padding: 20px 24px 10px 24px !important;
+    margin-bottom: 0 !important;
+}
+
+.header::before,
+.header::after {
+    margin: 10px auto !important;
+}
+
+.date {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+}
+
+.locations,
+.timer,
+.dress {
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+}
+
+.timer {
+    margin-top: 20px !important;
+    padding: 20px 20px !important;
+}
+
+.dress {
+    padding: 20px 20px !important;
+}
+
+.rsvp {
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
+    padding: 25px 20px !important;
+}
+
+.timeline {
+    margin: 30px 0 !important;
+    padding: 20px 20px !important;
+}
+
+.card {
+    padding: 30px 28px !important;
+}
+
+.wrapper {
+    padding: 10px !important;
+}
+
+/* Анимации для появления */
+.fade {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Стили для имён */
+
+
+.amp {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 300;
+}
+/* ===== ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ ГЛАВНЫХ ЗАГОЛОВКОВ ===== */
+
+/* Стиль для заголовка Дресс-код как у других */
+.dress h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #754e34;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto 20px auto;
+    padding-bottom: 10px;
+}
+
+/* Добавляем красивые линии по бокам, как в Editorial-дизайне */
+.dress h3::before,
+.dress h3::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dress h3::before {
+    left: -80px;
+}
+
+.dress h3::after {
+    right: -80px;
+}
+
+/* Чтобы линии не вылезали за пределы экрана на телефонах */
+@media (max-width: 600px) {
+    .dress h3::before,
+    .dress h3::after {
+        width: 30px;
+    }
+    .dress h3::before {
+        left: -40px;
+    }
+    .dress h3::after {
+        right: -40px;
+    }
+}
+/* ===== БЛОК ДЕТАЛИ ===== */
+
+.details {
+    text-align: center;
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(18px);
+    border-radius: 28px;
+    padding: 40px 28px;
+    margin-top: 30px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #754e34;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto 30px auto;
+    padding-bottom: 10px;
+}
+
+/* Декоративные линии по бокам заголовка, как у других блоков */
+.details h3::before,
+.details h3::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.details h3::before {
+    left: -80px;
+}
+
+.details h3::after {
+    right: -80px;
+}
+
+.details-content {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.details-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a3b32;
+    margin-bottom: 16px;
+    padding-left: 8px;
+    border-left: 3px solid rgba(201, 162, 124, 0.5);
+}
+
+.details-content p:last-child {
+    margin-bottom: 0;
+}
+
+.details-content strong {
+    color: #b68b68;
+    font-weight: 600;
+}
+@media (max-width: 680px) {
+    .details {
+        padding: 30px 20px;
+    }
+    
+    .details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .details h3::before,
+    .details h3::after {
+        width: 30px;
+    }
+    
+    .details h3::before {
+        left: -40px;
+    }
+    
+    .details h3::after {
+        right: -40px;
+    }
+    
+    .details-content p {
+        font-size: 0.85rem;
+        padding-left: 6px;
+    }
+}
+.name {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 500;
+    font-size: 5.2rem;
+    letter-spacing: 2px;
+    color: #b89a7a;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.dress-subnote {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a38b7a;
+    opacity: 0.8;
+}
+.name-top {
+    animation: revealTop 1.2s ease forwards;
+}
+
+.name-bottom {
+    animation: revealBottom 1.2s ease forwards;
+}
+
+@keyframes revealTop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40px) scale(0.95);
+        filter: blur(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        filter: blur(0);
+    }
+}
+
+@keyframes revealBottom {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 40px) scale(0.95);
+        filter: blur(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        filter: blur(0);
+    }
+}
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.box, .time-box, .swatch, .rsvp-form button {
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    will-change: transform;
+}
+.box:active,
+.time-box:active,
+.swatch:active,
+.rsvp-form button:active {
+    transform: scale(0.97);
+}
+@media (hover: none) {
+    .box:hover,
+    .time-box:hover,
+    .swatch:hover {
+        transform: none;
+    }
+}
+/* ===== ИСПРАВЛЕНИЕ ТАЙМЕРА ДЛЯ МОБИЛЬНЫХ (2×2 С ОТСТУПАМИ) ===== */
+@media (max-width: 550px) {
+    .timer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px 25px !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+    
+    .time-box {
+        min-width: auto !important;
+        padding: 14px 8px !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .time-box span {
+        font-size: 1.6rem !important;
+        display: block !important;
+    }
+    
+    .time-box p {
+        font-size: 0.7rem !important;
+        margin-top: 6px !important;
+        letter-spacing: 1px !important;
+    }
+}
+@media (max-width: 768px) {
+    .box,
+    .swatch,
+    .time-box,
+    .rsvp-form button,
+    .details-content p {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+    
+    .box:active,
+    .swatch:active,
+    .time-box:active,
+    .rsvp-form button:active {
+        transform: scale(0.98);
+    }
+    
+    .details-content p:active {
+        transform: scale(0.99);
+        background: rgba(255,255,255,0.1);
+    }
+}
+/* ===== СВЕЧЕНИЕ ПРИ ФОКУСЕ ===== */
+@media (max-width: 768px) {
+    .rsvp-form input:focus,
+    .rsvp-form select:focus,
+    .rsvp-form button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(201, 162, 124, 0.3);
+    }
+    
+    .rsvp-form button:active {
+        transform: scale(0.97);
+        box-shadow: 0 5px 15px rgba(182, 139, 104, 0.3);
+    }
+}
+/* ===== ГЛЯНЦЕВЫЙ БЛЕСК НА КАРТОЧКАХ ===== */
+@media (max-width: 768px) {
+    .box, .time-box, .rsvp, .details {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .box::after, .time-box::after, .rsvp::after, .details::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transform: skewX(-25deg);
+        animation: shine 8s infinite;
+        pointer-events: none;
+    }
+    
+    @keyframes shine {
+        0% { left: -100%; }
+        20% { left: 150%; }
+        100% { left: 150%; }
+    }
+}
+/* ===== КРАСИВЫЙ ВЫПАДАЮЩИЙ СПИСОК ДЛЯ RSVP ===== */
+
+/* Убираем стандартную стрелку и делаем красиво */
+.rsvp-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    padding: 14px 45px 14px 20px !important;
+    
+    /* Своя стрелка */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b68b68' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(201, 162, 124, 0.4) !important;
+    border-radius: 50px !important;
+    
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.95rem !important;
+    color: #4a3b32 !important;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* При наведении и фокусе */
+.rsvp-form select:hover,
+.rsvp-form select:focus {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #c6a07e !important;
+    box-shadow: 0 4px 12px rgba(198, 160, 126, 0.15);
+    outline: none;
+}
+
+/* Стиль для option (вариантов выбора) */
+.rsvp-form select option {
+    background-color: white;
+    color: #4a3b32;
+    padding: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Дополнительно: красивый стиль для поля ввода имени */
+.rsvp-form input {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(201, 162, 124, 0.4) !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease;
+}
+
+.rsvp-form input:focus {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #c6a07e !important;
+    box-shadow: 0 4px 12px rgba(198, 160, 126, 0.15);
+    outline: none;
+}
+
+/* Кнопка отправки — добавим элегантности */
+.rsvp-form button {
+    background: linear-gradient(135deg, #d4b48c, #c6a07e) !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease;
+}
+
+.rsvp-form button:hover,
+.rsvp-form button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(198, 160, 126, 0.3);
+}
+/* ===== КРАСИВЫЕ ВАРИАНТЫ ОТВЕТА В ВЫПАДАЮЩЕМ СПИСКЕ ===== */
+
+/* Стиль самого селекта (поле выбора) */
+.rsvp-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 14px 45px 14px 20px !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b68b68' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(201, 162, 124, 0.4) !important;
+    border-radius: 50px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.95rem !important;
+    color: #4a3b32 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* При открытии списка */
+.rsvp-form select:focus {
+    outline: none;
+    border-color: #c6a07e !important;
+    box-shadow: 0 4px 12px rgba(198, 160, 126, 0.15);
+}
+
+/* Стили для вариантов внутри списка */
+.rsvp-form select option {
+    padding: 12px 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.9rem !important;
+    background-color: #fffdfb !important;
+    color: #4a3b32 !important;
+    border-bottom: 1px solid rgba(201, 162, 124, 0.15);
+}
+
+/* Первый option (— Выберите вариант —) */
+.rsvp-form select option[value=""] {
+    color: #b68b68 !important;
+    font-style: italic;
+}
+
+/* Вариант "❤️ С радостью приду" */
+.rsvp-form select option[value="yes"] {
+    color: #7e5a44 !important;
+    font-weight: 500;
+}
+
+/* Вариант "💔 К сожалению, не смогу" */
+.rsvp-form select option[value="no"] {
+    color: #9a7f6e !important;
+}
+
+/* При наведении на вариант в выпадающем списке (работает не во всех браузерах) */
+.rsvp-form select option:hover {
+    background-color: #fef5ef !important;
+}
+.map {
+    text-align: center;
+    margin-top: 30px;
+}
+.map-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.map-btn {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(201,162,124,0.4);
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #7e5a44;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.map-btn:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
+}
+/* ===== ЗАГОЛОВОК «КАК ДОБРАТЬСЯ» В ЕДИНОМ СТИЛЕ ===== */
+
+.map {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.map h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #754e34;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto 30px auto;
+    padding-bottom: 10px;
+}
+
+/* Декоративные линии по бокам, как у других заголовков */
+.map h4::before,
+.map h4::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.map h4::before {
+    left: -80px;
+}
+
+.map h4::after {
+    right: -80px;
+}
+@media (max-width: 600px) {
+    .map h4 {
+        font-size: 1.0rem;
+    }
+    .map h4::before,
+    .map h4::after {
+        width: 25px;
+    }
+    .map h4::before {
+        left: -40px;
+    }
+    .map h4::after {
+        right: -40px;
+    }
+}
+/* ===== ЦВЕТ ЗАГОЛОВКОВ В КАРТОЧКАХ ЛОКАЦИЙ ===== */
+.box h3 {
+    color: #754e34 !important;
+}
+
+/* ===== ЦВЕТ НАЗВАНИЙ ОТТЕНКОВ В ДРЕСС-КОДЕ ===== */
+.label {
+    color: #754e34 !important;
+}
+/* ===== ЦВЕТ ЗАГОЛОВКА «ПРОГРАММА ДНЯ» ===== */
+.timeline-title {
+    color: #754e34 !important;
+}
+/* ===== КРАСИВЫЕ ИКОНКИ ВМЕСТО ЭМОДЗИ ===== */
+.custom-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rings {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b68b68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2a5 5 0 0 0-5 5c0 2 1 3 5 6 4-3 5-4 5-6a5 5 0 0 0-5-5z'/%3E%3Ccircle cx='12' cy='8' r='2'/%3E%3Cpath d='M5 14c-2 1-3 2-3 4 0 3 4 4 10 4s10-1 10-4c0-2-1-3-3-4'/%3E%3C/svg%3E");
+}
+
+.champagne {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b68b68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v4M8 2v4M16 2v4'/%3E%3Crect x='6' y='6' width='12' height='12' rx='1.5'/%3E%3Cpath d='M12 18v4M9 22h6'/%3E%3C/svg%3E");
+}
+/* ===== ПОДВАЛ (ФУТЕР) ===== */
+.footer {
+    text-align: center;
+    padding: 40px 20px 30px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(201, 162, 124, 0.3);
+}
+
+.footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #8c6b52;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.footer-heart {
+    font-size: 1rem !important;
+    color: #b68b68 !important;
+}
+
+.footer-names {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1rem !important;
+    letter-spacing: 2px;
+    color: #754e34 !important;
+    margin-top: 12px !important;
+}
+/* ===== ИСПРАВЛЕНИЕ ДЛЯ IPHONE И TELEGRAM (ВСЁ В ОДНОМ) ===== */
+
+/* 1. ИСПРАВЛЕНИЕ ИМЁН НА ВСЕХ МОБИЛЬНЫХ */
+@media (max-width: 768px) {
+    .hero-names {
+        min-height: 260px !important;
+        margin: 0 auto !important;
+    }
+    
+    .names-wrapper {
+        width: 100% !important;
+        max-width: 300px !important;
+        height: 200px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+    }
+    
+    .name {
+        font-size: 2.2rem !important;
+        white-space: nowrap !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        text-align: center !important;
+        width: auto !important;
+        position: absolute !important;
+    }
+    
+    .name-top {
+        top: -10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .name-bottom {
+        bottom: -10px !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .amp {
+        font-size: 2.8rem !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        position: absolute !important;
+    }
+}
+
+/* 2. СПЕЦИАЛЬНО ДЛЯ IPHONE 13 PRO (И АНАЛОГИЧНЫХ) */
+@media (max-width: 430px) {
+    .names-wrapper {
+        max-width: 260px !important;
+        height: 180px !important;
+    }
+    
+    .name {
+        font-size: 2rem !important;
+    }
+    
+    .name-top {
+        top: -15px !important;
+    }
+    
+    .name-bottom {
+        bottom: -15px !important;
+    }
+    
+    .amp {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* 3. АДАПТАЦИЯ ПОД TELEGRAM WebView (ТАЙМЕР ФИКС) */
+@media (max-width: 768px) {
+    /* Фикс для таймера — квадратики гарантированно видны */
+    .timer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        max-width: 260px !important;
+        margin: 0 auto !important;
+    }
+    
+    .time-box {
+        background: rgba(255, 255, 255, 0.9) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: 1px solid rgba(201, 162, 124, 0.5) !important;
+        border-radius: 18px !important;
+        padding: 12px 8px !important;
+        text-align: center !important;
+        min-width: auto !important;
+    }
+    
+    .time-box span {
+        font-size: 1.6rem !important;
+        display: block !important;
+        color: #b2825d !important;
+    }
+    
+    .time-box p {
+        font-size: 0.7rem !important;
+        margin-top: 4px !important;
+        color: #be9a7a !important;
+    }
+}
+@supports (background: -webkit-canvas) {
+    @media (max-width: 768px) {
+        .time-box {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+        }
+    }
+}
+/* ===== БЛОК «КАК ДОБРАТЬСЯ» В ЕДИНОМ СТИЛЕ ===== */
+
+.map {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(18px) !important;
+    border-radius: 28px !important;
+    padding: 40px 28px !important;
+    margin-top: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+.map h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #754e34;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto 30px auto;
+    padding-bottom: 10px;
+}
+
+/* Линии по бокам заголовка */
+.map h4::before,
+.map h4::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.15);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.map h4::before {
+    left: -80px;
+}
+
+.map h4::after {
+    right: -80px;
+}
+
+/* Кнопки внутри блока */
+.map-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.map-btn {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(201, 162, 124, 0.4);
+    border-radius: 50px;
+    padding: 10px 24px;
+    text-decoration: none;
+    color: #7e5a44;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.map-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+@media (max-width: 550px) {
+    .timer-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+    
+    .time-box {
+        width: 60px !important;
+        min-width: 60px !important;
+        max-width: 60px !important;
+        padding: 12px 5px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .time-box span {
+        font-size: 1.4rem !important;
+        display: block !important;
+    }
+    
+    .time-box p {
+        font-size: 0.6rem !important;
+        margin-top: 4px !important;
+    }
+}
+
+/* Для очень маленьких экранов (iPhone SE, 375px) */
+@media (max-width: 400px) {
+    .timer-grid {
+        gap: 8px !important;
+        max-width: 250px !important;
+    }
+    
+    .time-box {
+        width: 55px !important;
+        min-width: 55px !important;
+        padding: 10px 3px !important;
+    }
+    
+    .time-box span {
+        font-size: 1.2rem !important;
+    }
+    
+    .time-box p {
+        font-size: 0.55rem !important;
+    }
+}
+/* ===== ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ (СНАЧАЛА ИМЕНА, ПОТОМ ДАТА) ===== */
+
+/* Изначально скрываем все блоки */
+.locations,
+.timer,
+.dress,
+.timeline,
+.details,
+.rsvp,
+.map {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Имена появляются первыми (задержки уже есть в HTML/CSS) */
+
+/* Дата появляется после имён */
+.date {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 1.2s;
+}
+
+/* Локации и остальное — после даты */
+.locations { animation-delay: 1.6s; }
+.timer { animation-delay: 1.9s; }
+.dress { animation-delay: 2.1s; }
+.timeline { animation-delay: 2.3s; }
+.details { animation-delay: 2.5s; }
+.rsvp { animation-delay: 2.7s; }
+.map { animation-delay: 2.9s; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== ТЁМНО-КОРИЧНЕВЫЙ ТЕКСТ ДЛЯ ВСЕХ БЛОКОВ ===== */
+
+/* Карточки локаций (Церемония, Банкет) */
+.box p,
+.box .note,
+.address {
+    color: #4a3729 !important;
+}
+
+/* Детали */
+.details-content p {
+    color: #4a3729 !important;
+}
+
+/* Программа дня */
+.timeline-item .text,
+.timeline-item .time {
+    color: #4a3729 !important;
+}
+
+.timeline-item .text span {
+    color: #8b6b54 !important;  /* чуть светлее для дополнительного текста */
+}
+
+/* Текст в дресс-коде (описания цветов, примечания) */
+.dress .desc,
+.dress-note,
+.dress-intro {
+    color: #4a3729 !important;
+}
+
+/* Блок "Как добраться" */
+.map-btn {
+    color: #4a3729 !important;
+}
+
+/* Программа дня - время */
+.timeline-item .time {
+    color: #b2825d !important;  /* оставляем цветным для акцента */
+}
+
+/* Подписи в таймере уже были цветными, не трогаем */
+/* ===== ДЕКОРАТИВНАЯ ЛИНИЯ С ЗАДЕРЖКОЙ ===== */
+
+.divider-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 25px auto 35px auto;
+    width: 100%;
+    max-width: 200px;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 1.4s; /* появляется после даты */
+}
+
+.deco-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c6a07e, #e8cfb5);
+}
+
+.deco-line:first-child {
+    background: linear-gradient(90deg, #e8cfb5, #c6a07e, transparent);
+}
+
+.deco-symbol {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #c6a07e;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+
+    body {
+
+        /* МОБИЛЬНЫЙ ФОН */
+        background-image: url('images/5.jpg');
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        /* СТАТИЧНЫЙ ФОН */
+        background-attachment: fixed;
+
+        overflow-x: hidden;
+    }
+
+    .wrapper {
+        padding: 0;
+    }
+
+    /* УБИРАЕМ БОЛЬШУЮ ПОДЛОЖКУ */
+    .card {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+
+        box-shadow: none !important;
+        border: none !important;
+
+        padding: 20px 18px !important;
+    }
+
+    /* И СЕКЦИИ ТОЖЕ БЕЗ ФОНА */
+    .locations,
+    .timer,
+    .dress,
+    .timeline,
+    .details,
+    .rsvp,
+    .map,
+    .box,
+    .time-box {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* ЧТОБЫ ТЕКСТ ЧИТАЛСЯ */
+    p,
+    .text,
+    .details-content p,
+    .dress-note,
+    .note {
+        text-shadow:
+            0 1px 4px rgba(255,255,255,0.7);
+    }
+
+    h1, h2, h3, h4,
+    .name,
+    .timeline-title {
+        text-shadow:
+            0 2px 8px rgba(255,255,255,0.55);
+    }
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+}

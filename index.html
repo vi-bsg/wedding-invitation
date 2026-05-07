@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Руслан & Виктория</title>
+
+<!-- 💎 ШРИФТЫ  -->
+<!-- Подключение шрифтов -->
+<!-- Подключение шрифтов -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="card">
+
+<!-- 🌸 ШАПКА -->
+<header class="header fade">
+    <p class="suptitle">Счастливы пригласить</p>
+    <p class="subtitle">на нашу свадьбу</p>
+</header>
+
+<section class="hero-names fade">
+    <div class="names-wrapper">
+        <div class="name name-top">Руслан</div>
+        <div class="amp">&#38;</div>
+        <div class="name name-bottom">Виктория</div>
+    </div>
+</section>
+
+<!-- 📅 ДАТА -->
+<section class="date fade">
+    <h2>15 АВГУСТА 2026</h2>
+    <p>15:00 · Суббота</p>
+</section>
+<section class="divider-line fade">
+    <div class="deco-line"></div>
+    <div class="deco-symbol">✧</div>
+    <div class="deco-line"></div>
+</section>
+<!-- 📍 ЛОКАЦИИ -->
+<section class="locations fade">
+
+    <div class="box">
+    <div class="custom-icon rings"></div>
+    <h3>Церемония</h3>
+    <p>
+        состоится<br>
+        в ЗАГСе «Екатерининский»<br>
+        в 15:00, зал «Хрустальный»
+    </p>
+    <div class="note">
+        Просим приехать за 15–20 минут до начала,<br>
+        чтобы спокойно занять места
+    </div>
+</div>
+
+    <div class="box">
+    <div class="custom-icon champagne"></div>
+    <h3>Банкет</h3>
+    <p>
+        Ресторан «Станъ»<br>
+        ул. Кубанская Набережная, 15<br>
+        микрорайон Центральный
+    </p>
+</div>
+
+</section>
+
+<!-- ⏳ ТАЙМЕР -->
+<section class="timer fade">
+
+    <h4>До свадьбы осталось</h4>
+
+    <div class="timer-grid">
+
+        <div class="time-box">
+            <span id="days">0</span>
+            <p>дней</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">0</span>
+            <p>часов</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <p>минут</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <p>секунд</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 👗 ДРЕСС-КОД -->
+<section class="dress fade">
+
+    <h3>Дресс-код</h3>
+
+    <p class="dress-intro">
+        Пастельная палитра
+    </p>
+
+    <div class="editorial-grid">
+
+        <div class="swatch">
+            <div class="circle" style="background:#bcdff5"></div>
+            <div class="label">Pastel Blue</div>
+            <div class="desc">небо, лёгкость</div>
+        </div>
+
+        <div class="swatch">
+            <div class="circle" style="background:#cfe8d5"></div>
+            <div class="label">Soft Green</div>
+            <div class="desc">природа, свежесть</div>
+        </div>
+
+        <div class="swatch">
+            <div class="circle" style="background:#f6e7a6"></div>
+            <div class="label">Warm Yellow</div>
+            <div class="desc">свет, тепло</div>
+        </div>
+
+        <div class="swatch">
+            <div class="circle" style="background:#f3c6d7"></div>
+            <div class="label">Dusty Pink</div>
+            <div class="desc">нежность</div>
+        </div>
+
+        <div class="swatch">
+            <div class="circle" style="background:#d8c7f0"></div>
+            <div class="label">Lavender</div>
+            <div class="desc">романтика</div>
+        </div>
+        <div class="swatch">
+    <div class="circle" style="background:#e8d8c3"></div>
+    <div class="label">Soft Beige</div>
+    <div class="desc">спокойствие</div>
+</div>
+
+<div class="swatch">
+    <div class="circle" style="background:#d6c6b8"></div>
+    <div class="label">Light Taupe</div>
+    <div class="desc">элегантность</div>
+</div>
+
+
+<div class="swatch">
+    <div class="circle" style="background:#f0e4d2"></div>
+    <div class="label">Champagne</div>
+    <div class="desc">изысканность</div>
+</div>
+
+    </div>
+
+    <div class="dress-note">
+        Будем рады видеть вас в любых пастельных тонах, которые вам по душе. Мужчинам, конечно, подойдёт классика (и чёрный цвет тоже). Не переживайте, если наряд не полностью вписывается в палитру, главное для нас — ваше присутствие 🤍
+    </div>
+ <section class="rsvp fade">
+    <h3>Будете на свадьбе?</h3>
+    <p class="rsvp-sub">Пожалуйста, ответьте до <strong>1 июля 2026</strong>. Это очень поможет нам с организацией 🤍 Если планируете быть с парой или ребёнком, просто напишите все имена в поле ниже.</p>
+
+    <form id="rsvpForm" class="rsvp-form">
+        <input type="text" id="guestName" placeholder="Ваше имя и фамилия" required>
+        
+        <select id="attendance" required>
+            <option value="" disabled selected>— Будете ли вы на банкете? —</option>
+            <option value="yes">🌸 Да, с радостью приду</option>
+            <option value="no">🍃 Нет, не смогу</option>
+        </select>
+        
+        <select id="zaggs" required>
+            <option value="" disabled selected>— Поедете ли вы на трансфере до ресторана? —</option>
+            <option value="yes">🚌 Да, поеду на автобусе от загса</option>
+            <option value="no">Нет</option>
+        </select>
+        
+        <button type="submit" id="submitBtn">Отправить ответ</button>
+        <div id="formFeedback" class="feedback"></div>
+    </form>
+</section>
+
+
+
+</section>
+<section class="timeline fade">
+
+    <h3 class="timeline-title">Программа дня</h3>
+
+    <div class="timeline-item">
+        <div class="time">14:45</div>
+        <div class="text">
+            Будем рады, если вы приедете чуть заранее в ЗАГС «Екатерининский»<br>
+            <span>чтобы спокойно занять места и настроиться на праздник 🤍</span>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">15:00</div>
+        <div class="text">Начало церемонии бракосочетания</div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">15:30</div>
+        <div class="text">Тёплые поздравления и небольшая фотосессия с гостями</div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">16:00</div>
+        <div class="text">Отправление на трансфере в ресторан «Станъ»</div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">16:30</div>
+        <div class="text">Welcome-зона, лёгкое общение и первые бокалы</div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">17:30</div>
+        <div class="text">Начало праздничного банкета</div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">22:00–23:00</div>
+        <div class="text">
+            Завершение вечера<br>
+            <span>точное время зависит от настроения и танцев ✨</span>
+        </div>
+    </div>
+
+</section>
+<!-- ДЕТАЛИ -->
+<section class="details fade">
+    <h3>Детали</h3>
+    <div class="details-content">
+        <p> Мы очень тронуты, что вы готовы разделить с нами этот день, даже если для этого нужно проделать большой путь. К сожалению, мы не сможем разместить гостей у себя, но с радостью поможем с поиском жилья в городе — подскажем проверенные и удобные варианты. Просто напишите жениху или невесте.</p> <p>Если у вас есть идея для тоста, неожиданный сюрприз или просто вопрос к программе вечера — вы можете связаться с нашим ведущим напрямую:<br>
+<strong>+7 (XXX) XXX-XX-XX (Дмитрий)</strong><br></p><p>Если вы планируете быть на машине — у ресторана есть парковка.</p> <p>Пожалуйста, не мешайте работе фотографа и видеографа — спасибо за понимание 🤍</p>
+    </div>
+</section>
+<footer class="footer">
+    <p>Ждём вас с любовью</p>
+    <p class="footer-names">Руслан & Виктория</p>
+</footer>
+<section class="map fade">
+    <h4>Как добраться</h4>
+    <div class="map-buttons">
+        <a href="https://yandex.ru/maps/?text=Офицерская+47+Краснодар" target="_blank" class="map-btn">🗺️ ЗАГС</a>
+        <a href="https://yandex.ru/maps/?text=Кубанская+Набережная+15+Краснодар" target="_blank" class="map-btn">🍽️ Ресторан «Станъ»</a>
+    </div>
+</section>
+</div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
