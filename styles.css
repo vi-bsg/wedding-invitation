@@ -1628,12 +1628,9 @@ body {
     position: fixed;
     inset: 0;
     z-index: -1;
-    top: -20px;
-    bottom: -20px;
-    left: -20px;
-    right: -20px;
+    
     background-image: url('images/5.jpg');
-    background-size: 110% auto;
+    background-size: 100% auto;
     background-position: center center;
     background-repeat: no-repeat;
 
