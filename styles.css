@@ -1638,3 +1638,26 @@ body {
     transform: none;
 }
 }
+/* ===== СТИЛЬ ДЛЯ ПОДПИСЕЙ В ТАЙМЛАЙНЕ (ПОЯСНЕНИЯ) ===== */
+.timeline-item span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #8b6b54;
+    margin-top: 6px;
+    line-height: 1.4;
+    font-style: normal;
+    letter-spacing: 0.3px;
+}
+.timeline-item span {
+    white-space: normal !important;
+}
+/* ===== УВЕЛИЧЕНИЕ ИМЁН НА МОБИЛЬНЫХ ===== */
+@media (max-width: 680px) {
+    .name {
+        font-size: 4rem !important;
+    }
+    .amp {
+        font-size: 4.2rem !important;
+    }
+}
