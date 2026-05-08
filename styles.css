@@ -1630,11 +1630,11 @@ body {
     z-index: -1;
     
     background-image: url('images/5.jpg');
-    background-size: 100% auto;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 
     /* ВАЖНО */
-    transform: scale(1.05);
+    transform: none;
 }
 }
