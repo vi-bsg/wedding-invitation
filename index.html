@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Руслан & Виктория</title>
+<title>Иван & Екатерина</title>
 
 <!-- 💎 ШРИФТЫ  -->
 <!-- Подключение шрифтов -->
@@ -29,21 +29,31 @@
 
 <section class="hero-names fade">
     <div class="names-wrapper">
-        <div class="name name-top">Руслан</div>
+        <div class="name name-top">Иван</div>
         <div class="amp">&#38;</div>
-        <div class="name name-bottom">Виктория</div>
+        <div class="name name-bottom">Екатерина</div>
     </div>
 </section>
 
 <!-- 📅 ДАТА -->
 <section class="date fade">
-    <h2>15 АВГУСТА 2026</h2>
-    <p>15:00 · Суббота</p>
-</section>
-<section class="divider-line fade">
-    <div class="deco-line"></div>
-    <div class="deco-symbol">✧</div>
-    <div class="deco-line"></div>
+    <div class="date-wrapper">
+        <div class="date-left">
+            <div class="date-line"></div>
+            <span class="date-month">август</span>
+            <div class="date-line"></div>
+        </div>
+        <div class="date-number">15</div>
+        <div class="date-right">
+            <div class="date-line"></div>
+            <span class="date-year">2026</span>
+            <div class="date-line"></div>
+        </div>
+    </div>
+    <div class="date-time-wrapper">
+        <span class="date-weekday">суббота</span>
+        <span class="date-hour">16:00</span>
+    </div>
 </section>
 <!-- 📍 ЛОКАЦИИ -->
 <section class="locations fade">
@@ -53,8 +63,8 @@
     <h3>Церемония</h3>
     <p>
         состоится<br>
-        в ЗАГСе «Екатерининский»<br>
-        в 15:00, зал «Хрустальный»
+        в ЗАГСе «Центральный»<br>
+        в 16:00
     </p>
     <div class="note">
         Просим приехать за 15–20 минут до начала,<br>
@@ -66,9 +76,8 @@
     <div class="custom-icon champagne"></div>
     <h3>Банкет</h3>
     <p>
-        Ресторан «Станъ»<br>
-        ул. Кубанская Набережная, 15<br>
-        микрорайон Центральный
+        Ресторан «Вода»<br>
+        ул. Ленина, 15<br>
     </p>
 </div>
 
@@ -181,12 +190,6 @@
             <option value="no">🍃 Нет, не смогу</option>
         </select>
         
-        <select id="zaggs" required>
-            <option value="" disabled selected>— Поедете ли вы на трансфере до ресторана? —</option>
-            <option value="yes">🚌 Да, поеду на автобусе от загса</option>
-            <option value="no">Нет</option>
-        </select>
-        
         <button type="submit" id="submitBtn">Отправить ответ</button>
         <div id="formFeedback" class="feedback"></div>
     </form>
@@ -200,40 +203,35 @@
     <h3 class="timeline-title">Программа дня</h3>
 
     <div class="timeline-item">
-        <div class="time">14:45</div>
+        <div class="time">15:45</div>
         <div class="text">
             Будем рады, если вы приедете чуть заранее в ЗАГС «Екатерининский»<br>
-            <span>чтобы спокойно занять места и настроиться на праздник 🤍</span>
+            <span>чтобы спокойно занять места и настроиться на праздник, учитывайте пробки в центре. Рекомендуем выехать заранее, чтобы ничего не пропустить 🤍</span>
         </div>
     </div>
 
     <div class="timeline-item">
-        <div class="time">15:00</div>
+        <div class="time">16:00</div>
         <div class="text">Начало церемонии бракосочетания<br><span>Вы можете присоединиться к нам на церемонии в ЗАГСе или сразу приехать в ресторан.</span></div>
     </div>
 
     <div class="timeline-item">
-        <div class="time">15:30</div>
+        <div class="time">16:30</div>
         <div class="text">Тёплые поздравления и небольшая фотосессия с гостями</div>
     </div>
 
     <div class="timeline-item">
-        <div class="time">16:00</div>
-        <div class="text">Отправление на трансфере в ресторан «Станъ»<br><span>Вы можете отправиться в ресторан на нашем трансфере или поехать самостоятельно — как вам удобнее. Автобус будет ждать гостей после церемонии.</span></div>
-    </div>
-
-    <div class="timeline-item">
-        <div class="time">16:30</div>
-        <div class="text">Welcome-зона</div>
-    </div>
-
-    <div class="timeline-item">
         <div class="time">17:30</div>
+        <div class="text">Welcome-зона в ресторане Станъ</div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="time">18:00</div>
         <div class="text">Начало праздничного банкета</div>
     </div>
 
     <div class="timeline-item">
-        <div class="time">22:00–23:00</div>
+        <div class="time">23:00</div>
         <div class="text">
             Завершение вечера<br>
         </div>
@@ -245,24 +243,111 @@
     <h3>Детали</h3>
     <div class="details-content">
         <p> Мы очень тронуты, что вы готовы разделить с нами этот день, даже если для этого нужно проделать большой путь. К сожалению, мы не сможем разместить гостей у себя, но с радостью поможем с поиском жилья в городе — подскажем проверенные и удобные варианты. Просто напишите жениху или невесте.</p> <p>Если у вас есть идея для тоста, неожиданный сюрприз или просто вопрос к программе вечера — вы можете связаться с нашим ведущим напрямую:<br>
-<strong>+7 (XXX) XXX-XX-XX (Дмитрий)</strong><br></p><p>Если вы планируете быть на машине — у ресторана есть парковка.</p> <p>Пожалуйста, не мешайте работе фотографа и видеографа — спасибо за понимание 🤍</p>
+<strong>+7 (ххх) ххх-хх-хх (Павел)</strong><br></p><p>Если вы планируете быть на машине — у ресторана есть парковка.</p> <p>Пожалуйста, не мешайте работе фотографа и видеографа — спасибо за понимание 🤍</p>
     </div>
 </section>
 <footer class="footer">
     <p>Ждём вас с любовью</p>
-    <p class="footer-names">Руслан & Виктория</p>
+    <p class="footer-names">Иван & Екатерина</p>
 </footer>
 <section class="map fade">
     <h4>Как добраться</h4>
     <div class="map-buttons">
-        <a href="https://yandex.ru/maps/?text=Офицерская+47+Краснодар" target="_blank" class="map-btn">🗺️ ЗАГС</a>
-        <a href="https://yandex.ru/maps/?text=Кубанская+Набережная+15+Краснодар" target="_blank" class="map-btn">🍽️ Ресторан «Станъ»</a>
+        <a href="https://yandex.ru/maps/org/upravleniye_zags_krasnodarskogo_kraya_otdel_zags_adlerskogo_rayona/1026022099/?indoorLevel=1&ll=39.922263%2C43.427901&z=17.12" target="_blank" class="map-btn">🗺️ ЗАГС</a>
+        <a href="https://yandex.ru/maps/org/voda/57908756664/?ll=39.915225%2C43.431423&z=14" target="_blank" class="map-btn">🍽️ Ресторан «Вода»</a>
     </div>
 </section>
 </div>
 </div>
 
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycby2DAeyKBiMGFp-wTEZbXJvXgEifeIZd94X5YuQ892HCNRaBk5er7R0W_vf8y-7vQkY/exec';
 
-<script src="script.js"></script>
+const form = document.getElementById('rsvpForm');
+const feedback = document.getElementById('formFeedback');
+
+// Функция для получения списка уже ответивших из localStorage
+function getRespondedGuests() {
+    const saved = localStorage.getItem('wedding_responded');
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Функция для сохранения ответившего гостя
+function saveRespondedGuest(name) {
+    const responded = getRespondedGuests();
+    responded.push(name.toLowerCase());
+    localStorage.setItem('wedding_responded', JSON.stringify(responded));
+}
+
+// Функция проверки, отвечал ли уже гость
+function hasResponded(name) {
+    const responded = getRespondedGuests();
+    return responded.includes(name.toLowerCase());
+}
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const guestName = document.getElementById('guestName').value.trim();
+    const attendance = document.getElementById('attendance').value;
+    
+    // Проверка на пустое имя
+    if (!guestName) {
+        feedback.innerHTML = '❌ Пожалуйста, укажите ваше имя.';
+        feedback.style.color = '#b1624d';
+        return;
+    }
+    
+    // Проверка на выбор ответа
+    if (!attendance) {
+        feedback.innerHTML = '❌ Пожалуйста, ответьте, будете ли вы на банкете.';
+        feedback.style.color = '#b1624d';
+        return;
+    }
+    
+    // ПРОВЕРКА: отвечал ли уже этот человек
+    if (hasResponded(guestName)) {
+        feedback.innerHTML = `🙏 ${guestName}, вы уже отправляли ответ. Если хотите изменить ответ, пожалуйста, свяжитесь с нами лично 🤍`;
+        feedback.style.color = '#b68b68';
+        return;
+    }
+    
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем...';
+    
+    const formData = new URLSearchParams();
+    formData.append('guestName', guestName);
+    formData.append('attendance', attendance);
+    
+    try {
+        const response = await fetch(scriptURL, { method: 'POST', body: formData });
+        const result = await response.json();
+        
+        if (result.result === 'success') {
+            // Сохраняем, что этот гость ответил
+            saveRespondedGuest(guestName);
+            
+            const answerText = attendance === 'yes' ? 'придёте на банкет 🎉' : 'не сможете прийти 🕊️';
+            feedback.innerHTML = `✅ Спасибо, ${guestName}! Мы получили ваш ответ: ${answerText}`;
+            feedback.style.color = '#548c6f';
+            form.reset();
+        } else {
+            throw new Error('Ошибка');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        feedback.innerHTML = '❌ Ошибка. Попробуйте ещё раз или напишите нам лично.';
+        feedback.style.color = '#b1624d';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отправить ответ';
+        
+        setTimeout(() => {
+            feedback.innerHTML = '';
+        }, 5000);
+    }
+});
+</script>
 </body>
 </html>

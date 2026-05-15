@@ -38,9 +38,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
-// === НАСТРОЙКИ TELEGRAM ===
-const BOT_TOKEN = '8681241596:AAHgPWXTxRPs23_osHNHxfz2xgdLyfWuJhU';
-const CHAT_ID = '832855643';
 
 // === ЭЛЕМЕНТЫ ФОРМЫ ===
 const form = document.getElementById('rsvpForm');
