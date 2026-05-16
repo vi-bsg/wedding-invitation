@@ -48,7 +48,6 @@ const feedbackDiv = document.getElementById('formFeedback');
 
 // === СЧЁТЧИКИ ===
 let totalGuests = 0;
-let totalTransfer = 0;
 let responses = [];
 
 function loadCounters() {
@@ -56,7 +55,6 @@ function loadCounters() {
     if (saved) {
         const data = JSON.parse(saved);
         totalGuests = data.totalGuests || 0;
-        totalTransfer = data.totalTransfer || 0;
         responses = data.responses || [];
     }
 }
@@ -65,17 +63,15 @@ loadCounters();
 function saveCounters() {
     localStorage.setItem('wedding_stats', JSON.stringify({
         totalGuests: totalGuests,
-        totalTransfer: totalTransfer,
         responses: responses
     }));
 }
 
-// === ОТПРАВКА В TELEGRAM ===
-async function sendToTelegram(name, answer, transfer) {
-    const answerText = answer === 'yes' ? '✅ Будет на банкете' : '❌ Не будет на банкете';
-    const transferText = transfer === 'yes' ? '🚌 Будет в трансфере' : '🚗 Едет сама/сам';
+// === ОТПРАВКА В TELEGRAM (БЕЗ ТРАНСФЕРА) ===
+async function sendToTelegram(name, answer) {
+    const answerText = answer === 'yes' ? '✅ Будет на свадьбе' : '❌ Не сможет прийти';
 
-    const message = `✨ НОВЫЙ ОТВЕТ ✨\n\n👤 Гость: ${name}\n📝 Банкет: ${answerText}\n🚌 Трансфер: ${transferText}\n\n📊 Сейчас:\n🎉 Всего гостей: ${totalGuests}\n🚍 На трансфере: ${totalTransfer}\n⏰ ${new Date().toLocaleString('ru-RU')}`;
+    const message = `✨ НОВЫЙ ОТВЕТ ✨\n\n👤 Гость: ${name}\n📝 Ответ: ${answerText}\n\n📊 Сейчас:\n🎉 Всего гостей: ${totalGuests}\n⏰ ${new Date().toLocaleString('ru-RU')}`;
 
     try {
         const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -109,7 +105,6 @@ form.addEventListener('submit', async function(e) {
 
     const name = document.getElementById('guestName').value.trim();
     const attendance = document.getElementById('attendance').value;
-    const zaggs = document.getElementById('zaggs').value;
 
     if (!name) {
         feedbackDiv.innerHTML = '❌ Пожалуйста, укажите ваше имя.';
@@ -118,13 +113,7 @@ form.addEventListener('submit', async function(e) {
     }
 
     if (!attendance) {
-        feedbackDiv.innerHTML = '❌ Пожалуйста, ответьте, будете ли вы на банкете.';
-        feedbackDiv.style.color = '#b1624d';
-        return;
-    }
-
-    if (!zaggs) {
-        feedbackDiv.innerHTML = '❌ Пожалуйста, ответьте про трансфер.';
+        feedbackDiv.innerHTML = '❌ Пожалуйста, ответьте, будете ли вы на свадьбе.';
         feedbackDiv.style.color = '#b1624d';
         return;
     }
@@ -138,26 +127,23 @@ form.addEventListener('submit', async function(e) {
 
     if (attendance === 'yes') {
         totalGuests++;
-        if (zaggs === 'yes') totalTransfer++;
     }
 
     responses.push({
         name: name,
         attendance: attendance,
-        transfer: zaggs,
         timestamp: new Date().toLocaleString('ru-RU')
     });
     saveCounters();
 
-    const sent = await sendToTelegram(name, attendance, zaggs);
+    const sent = await sendToTelegram(name, attendance);
 
     if (sent) {
-        const answerRu = attendance === 'yes' ? 'придёте на банкет 🎉' : 'не сможете прийти 🕊️';
+        const answerRu = attendance === 'yes' ? 'придёте на свадьбу 🎉' : 'не сможете прийти 🕊️';
         feedbackDiv.innerHTML = `✅ Спасибо, ${name}! Мы получили ваш ответ: ${answerRu}`;
         feedbackDiv.style.color = '#548c6f';
         document.getElementById('guestName').value = '';
         document.getElementById('attendance').value = '';
-        document.getElementById('zaggs').value = '';
     } else {
         feedbackDiv.innerHTML = '❌ Ошибка отправки. Попробуйте ещё раз или напишите нам лично.';
         feedbackDiv.style.color = '#b1624d';
