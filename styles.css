@@ -1751,3 +1751,48 @@ body {
         font-size: 0.65rem;
     }
 }
+/* ===== СООБЩЕНИЕ ОБ УСПЕШНОЙ ОТПРАВКЕ ===== */
+.success-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: gentleFloat 0.5s ease;
+}
+
+.success-message h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #754e34;
+    margin-bottom: 12px;
+}
+
+.success-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #4a3729 !important;
+    margin-bottom: 8px;
+}
+
+.success-small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem !important;
+    color: #b68b68 !important;
+    margin-top: 15px;
+}
+
+@keyframes gentleFloat {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

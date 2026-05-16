@@ -67,7 +67,7 @@ function saveCounters() {
     }));
 }
 
-// === ОТПРАВКА В TELEGRAM (БЕЗ ТРАНСФЕРА) ===
+// === ОТПРАВКА В TELEGRAM ===
 async function sendToTelegram(name, answer) {
     const answerText = answer === 'yes' ? '✅ Будет на свадьбе' : '❌ Не сможет прийти';
 
@@ -139,17 +139,23 @@ form.addEventListener('submit', async function(e) {
     const sent = await sendToTelegram(name, attendance);
 
     if (sent) {
-        const answerRu = attendance === 'yes' ? 'придёте на свадьбу 🎉' : 'не сможете прийти 🕊️';
-        feedbackDiv.innerHTML = `✅ Спасибо, ${name}! Мы получили ваш ответ: ${answerRu}`;
-        feedbackDiv.style.color = '#548c6f';
-        document.getElementById('guestName').value = '';
-        document.getElementById('attendance').value = '';
+        // ПОЛНОСТЬЮ ЗАМЕНЯЕМ ФОРМУ НА СООБЩЕНИЕ ОБ УСПЕХЕ
+        const formContainer = document.querySelector('.rsvp');
+        if (formContainer) {
+            formContainer.innerHTML = `
+                <div class="success-message">
+                    <h3>Спасибо, ${name}!</h3>
+                    <p>Мы получили ваш ответ 🤍</p>
+                    <p class="success-small">Если захотите изменить ответ, свяжитесь с нами лично</p>
+                </div>
+            `;
+        }
     } else {
         feedbackDiv.innerHTML = '❌ Ошибка отправки. Попробуйте ещё раз или напишите нам лично.';
         feedbackDiv.style.color = '#b1624d';
+        
+        setTimeout(() => {
+            feedbackDiv.innerHTML = '';
+        }, 5000);
     }
-
-    setTimeout(() => {
-        feedbackDiv.innerHTML = '';
-    }, 5000);
 });
